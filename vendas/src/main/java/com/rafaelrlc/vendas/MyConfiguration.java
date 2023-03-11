@@ -3,12 +3,11 @@ package com.rafaelrlc.vendas;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 
-@Configuration
-@Profile("development") // essa classe será disponível apenas no modo development
+
+@Development // será herdado as config do Development.java
 public class MyConfiguration {
+
     @Bean
     public CommandLineRunner executar(){
         return args -> {

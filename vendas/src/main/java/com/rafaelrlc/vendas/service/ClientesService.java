@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClientesService {
 
-    private ClientesRepository repository; // uma declaração de variável usada para injetar
+    private ClientesRepository repository; // uma declaração de variável usada para injetar (não eh bean)
 
     @Autowired
     public ClientesService( ClientesRepository repository) {
