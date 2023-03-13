@@ -1,8 +1,19 @@
 package io.github.rafaelrlc.vendasdata.domain.entity;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "cliente") // coloca o nome que ta no banco de dados
 public class Cliente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id") // coloca o nome que ta no banco de dados
     private Integer id;
+
+
+    @Column(name = "nome", length = 100)
     private String nome;
 
 
@@ -13,6 +24,10 @@ public class Cliente {
 
     public Cliente(String nome) {
         this.nome = nome;
+    }
+
+    public Cliente() {
+
     }
 
     public Integer getId() {

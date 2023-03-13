@@ -35,20 +35,18 @@ public class VendasDataApplication {
                 clientes.updateClient(client);
             });
 
-            //System.out.println("buscando clientes \n");
-            //clientes.searchByName("Rafael").forEach(System.out::println);
+            System.out.println("buscando clientes \n");
+            clientes.searchByName("Rafael").forEach(System.out::println);
 
             //System.out.println("deletando todos clientes \n");
             //todosClientes.forEach(client -> clientes.deleteClient(client));
 
-            //System.out.println("deletando cliente of id 2 \n");
-            //clientes.deleteById(2);
+            System.out.println("deletando cliente of id 2 \n");
+            clientes.deleteById(2);
 
             System.out.println("todos os clientes: \n");
             todosClientes= clientes.getAll();
             todosClientes.forEach(System.out::println);
-
-
 
             //System.out.println(clientes.searchByName("Rafael"));
 
