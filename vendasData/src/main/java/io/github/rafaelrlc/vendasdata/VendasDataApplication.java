@@ -24,31 +24,37 @@ public class VendasDataApplication {
     @Bean
     public CommandLineRunner init(){ //
         return args -> {
-            clientes.saveClient(new Cliente("Rafael")); // crio o objeto cliente
-            clientes.saveClient(new Cliente("Pedro")); // crio o objeto cliente
+            clientes.save(new Cliente("Rafael", "11223345424")); // crio o objeto cliente
+            clientes.save(new Cliente("Pedro", "11223345422")); // crio o objeto cliente
 
-            List<Cliente> todosClientes = clientes.getAll();
+            List<Cliente> todosClientes = clientes.findAll();
             todosClientes.forEach(System.out::println);
 
             todosClientes.forEach(client -> {
                 client.setNome(client.getNome() + " updated");
-                clientes.updateClient(client);
+                clientes.save(client);
             });
 
-            System.out.println("buscando clientes \n");
-            clientes.searchByName("Rafael").forEach(System.out::println);
-
-            //System.out.println("deletando todos clientes \n");
-            //todosClientes.forEach(client -> clientes.deleteClient(client));
-
-            System.out.println("deletando cliente of id 2 \n");
-            clientes.deleteById(2);
-
-            System.out.println("todos os clientes: \n");
-            todosClientes= clientes.getAll();
+            todosClientes = clientes.findAll();
             todosClientes.forEach(System.out::println);
 
-            //System.out.println(clientes.searchByName("Rafael"));
+            //System.out.println("buscando clientes \n");
+            //clientes.findByNomeLike("Rafael").forEach(System.out::println);
+
+            //System.out.println("deletando todos clientes \n");
+            //todosClientes.forEach(client -> clientes.delete(client));
+
+            //System.out.println("deletando cliente of id 2 \n");
+            //clientes.deleteById(2);
+
+            //System.out.println("todos os clientes: \n");
+            //todosClientes= clientes.findAll();
+            //todosClientes.forEach(System.out::println);
+
+            System.out.println(clientes.findById(1));
+            System.out.println(clientes.findByNome("Rafael updated"));
+            System.out.println(clientes.findByNomeOrId("Rafael", 1));
+            System.out.println(clientes.findOneByCpf("11223345422"));
 
         };
     }
