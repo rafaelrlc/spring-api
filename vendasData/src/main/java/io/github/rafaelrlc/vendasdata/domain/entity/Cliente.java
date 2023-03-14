@@ -3,6 +3,8 @@ package io.github.rafaelrlc.vendasdata.domain.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "cliente") // coloca o nome que ta no banco de dados
 public class Cliente {
@@ -18,6 +20,10 @@ public class Cliente {
 
     @Column(name = "cpf", length = 11)
     private String cpf;
+
+    @OneToMany(mappedBy = "cliente") // aqui ficaram os pedidos no qual a Tabela pedidos se relaciona com tal cliente
+    private Set<Venda> vendas;
+
 
     public Cliente(Integer id, String nome, String cpf) {
         this.id = id;
@@ -49,6 +55,15 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public Set<Venda> getPedidos() {
+        return vendas;
+    }
+
+    public void setPedidos(Set<Venda> pedidos) {
+        this.vendas = pedidos;
+    }
+
 
     @Override
     public String toString() {

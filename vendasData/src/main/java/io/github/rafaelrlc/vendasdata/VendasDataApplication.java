@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+
 import java.util.List;
 
 @SpringBootApplication
@@ -36,7 +37,8 @@ public class VendasDataApplication {
             });
 
             todosClientes = clientes.findAll();
-            todosClientes.forEach(System.out::println);
+
+            //todosClientes.forEach(System.out::println);
 
             //System.out.println("buscando clientes \n");
             //clientes.findByNomeLike("Rafael").forEach(System.out::println);
@@ -51,10 +53,10 @@ public class VendasDataApplication {
             //todosClientes= clientes.findAll();
             //todosClientes.forEach(System.out::println);
 
-            System.out.println(clientes.findById(1));
-            System.out.println(clientes.findByNome("Rafael updated"));
-            System.out.println(clientes.findByNomeOrId("Rafael", 1));
-            System.out.println(clientes.findOneByCpf("11223345422"));
+            //System.out.println(clientes.findById(2));
+            System.out.println(clientes.findByName("Rafael updated"));
+            //System.out.println(clientes.findByNomeOrId("Rafael", 1));
+            //System.out.println(clientes.findOneByCpf("11223345422"));
 
         };
     }

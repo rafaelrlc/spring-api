@@ -1,10 +1,27 @@
 package io.github.rafaelrlc.vendasdata.domain.entity;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "item_pedido")
 public class ItemPedido {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     private Integer id;
-    private Pedido pedido;
+
+
+    @ManyToOne
+    @JoinColumn(name = "venda_id")
+    private Venda venda;
+
+    @ManyToOne
+    @JoinColumn(name = "produto_id")
     private Produto produto;
+
+    @Column(name = "quantidade")
     private Integer quantidade;
 
     public Integer getId() {
@@ -15,12 +32,12 @@ public class ItemPedido {
         this.id = id;
     }
 
-    public Pedido getPedido() {
-        return pedido;
+    public Venda getPedido() {
+        return venda;
     }
 
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setPedido(Venda venda) {
+        this.venda = venda;
     }
 
     public Produto getProduto() {
