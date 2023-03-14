@@ -1,1 +1,1 @@
-![My Image](my-image.png)
+![My Image](db_model.png)
