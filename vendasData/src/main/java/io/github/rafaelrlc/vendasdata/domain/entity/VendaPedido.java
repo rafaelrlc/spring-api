@@ -4,8 +4,8 @@ package io.github.rafaelrlc.vendasdata.domain.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "item_pedido")
-public class ItemPedido {
+@Table(name = "venda_pedido")
+public class VendaPedido {
 
     @Id
     @GeneratedValue
@@ -24,6 +24,7 @@ public class ItemPedido {
     @Column(name = "quantidade")
     private Integer quantidade;
 
+
     public Integer getId() {
         return id;
     }
@@ -32,27 +33,27 @@ public class ItemPedido {
         this.id = id;
     }
 
-    public Venda getPedido() {
+    public Venda getVenda() {
         return venda;
     }
 
-    public void setPedido(Venda venda) {
-        this.venda = venda;
-    }
-
-    public Produto getProduto() {
-        return produto;
+    public void setVenda(Venda pedido) {
+        this.venda = pedido;
     }
 
     public void setProduto(Produto produto) {
         this.produto = produto;
     }
 
-    public Integer getQuantidade() {
-        return quantidade;
+    public Produto getProduto() {
+        return produto;
     }
 
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
     }
 }

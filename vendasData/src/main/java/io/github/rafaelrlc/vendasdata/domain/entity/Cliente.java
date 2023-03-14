@@ -64,6 +64,13 @@ public class Cliente {
         this.vendas = pedidos;
     }
 
+    public void setCpf(String cpf){
+        this.cpf = cpf;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
 
     @Override
     public String toString() {

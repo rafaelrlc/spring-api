@@ -27,15 +27,14 @@ public class Venda {
 
 
     @OneToMany(mappedBy = "venda")
-    private List<ItemPedido> itens;
+    private List<VendaPedido> itens;
 
 
-
-    public List<ItemPedido> getItens() {
+    public List<VendaPedido> getItens() {
         return itens;
     }
 
-    public void setItens(List<ItemPedido> itens) {
+    public void setItens(List<VendaPedido> itens) {
         this.itens = itens;
     }
 
