@@ -21,7 +21,7 @@ public class Cliente {
     @Column(name = "cpf", length = 11)
     private String cpf;
 
-    @OneToMany(mappedBy = "cliente") // aqui ficaram os pedidos no qual a Tabela pedidos se relaciona com tal cliente
+    @OneToMany(mappedBy = "cliente" , fetch = FetchType.LAZY) // aqui ficaram as vendas no qual a Tabela pedidos se relaciona com tal cliente
     private Set<Venda> vendas;
 
 
@@ -56,12 +56,12 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public Set<Venda> getPedidos() {
+    public Set<Venda> getVendas() {
         return vendas;
     }
 
-    public void setPedidos(Set<Venda> pedidos) {
-        this.vendas = pedidos;
+    public void setVendas(Set<Venda> vendas) {
+        this.vendas = vendas;
     }
 
     public void setCpf(String cpf){

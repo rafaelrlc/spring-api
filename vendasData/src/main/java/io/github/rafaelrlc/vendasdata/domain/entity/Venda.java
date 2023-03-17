@@ -27,14 +27,14 @@ public class Venda {
 
 
     @OneToMany(mappedBy = "venda")
-    private List<VendaPedido> itens;
+    private List<VendaProduto> itens;
 
 
-    public List<VendaPedido> getItens() {
+    public List<VendaProduto> getItens() {
         return itens;
     }
 
-    public void setItens(List<VendaPedido> itens) {
+    public void setItens(List<VendaProduto> itens) {
         this.itens = itens;
     }
 
@@ -54,9 +54,7 @@ public class Venda {
         this.cliente = cliente;
     }
 
-    public LocalDate getDataVenda() {
-        return dataVenda;
-    }
+    public LocalDate getDataVenda() { return dataVenda; }
 
     public void setDataVenda(LocalDate dataVenda) {
         this.dataVenda = dataVenda;
@@ -68,5 +66,14 @@ public class Venda {
 
     public void setTotal(BigDecimal total) {
         this.total = total;
+    }
+
+    @Override
+    public String toString() {
+        return "Venda{" +
+                "id=" + id +
+                ", dataVenda=" + dataVenda +
+                ", total=" + total +
+                '}';
     }
 }

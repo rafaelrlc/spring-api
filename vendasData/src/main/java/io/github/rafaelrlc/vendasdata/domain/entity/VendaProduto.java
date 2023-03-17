@@ -4,14 +4,13 @@ package io.github.rafaelrlc.vendasdata.domain.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "venda_pedido")
-public class VendaPedido {
+@Table(name = "venda_produto")
+public class VendaProduto {
 
     @Id
     @GeneratedValue
     @Column(name = "id")
     private Integer id;
-
 
     @ManyToOne
     @JoinColumn(name = "venda_id")
