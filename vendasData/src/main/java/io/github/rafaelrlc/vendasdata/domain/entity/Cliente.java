@@ -1,6 +1,7 @@
 package io.github.rafaelrlc.vendasdata.domain.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -18,9 +19,10 @@ public class Cliente {
     @Column(name = "nome", length = 100)
     private String nome;
 
-    @Column(name = "cpf", length = 11)
+    @Column(name = "cpf", length = 100)
     private String cpf;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente" , fetch = FetchType.LAZY) // aqui ficaram as vendas no qual a Tabela pedidos se relaciona com tal cliente
     private Set<Venda> vendas;
 

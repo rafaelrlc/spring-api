@@ -25,7 +25,6 @@ public class Venda {
     @Column(name = "total", precision = 20, scale = 2)
     private BigDecimal total;
 
-
     @OneToMany(mappedBy = "venda")
     private List<VendaProduto> itens;
 

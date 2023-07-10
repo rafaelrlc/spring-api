@@ -13,7 +13,6 @@ public class Produto {
     @Column(name = "id") // coloca o nome que ta no banco de dados
     private Integer id;
 
-
     @Column(name = "descricao")
     private String descricao;
 

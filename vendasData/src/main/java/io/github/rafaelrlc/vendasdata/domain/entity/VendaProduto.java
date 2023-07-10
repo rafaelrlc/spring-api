@@ -1,8 +1,7 @@
 package io.github.rafaelrlc.vendasdata.domain.entity;
-
-
 import jakarta.persistence.*;
 
+// REPRESENTA UMA VENDA INDIVIDUAL, PODE VARIOS DESSES VÃO COMPOR O "VENDA"
 @Entity
 @Table(name = "venda_produto")
 public class VendaProduto {
@@ -36,8 +35,8 @@ public class VendaProduto {
         return venda;
     }
 
-    public void setVenda(Venda pedido) {
-        this.venda = pedido;
+    public void setVenda(Venda venda) {
+        this.venda = venda;
     }
 
     public void setProduto(Produto produto) {
