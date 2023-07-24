@@ -18,7 +18,7 @@ import java.util.Optional;
 @RequestMapping("/api/clientes")
 public class ClienteController {
 
-    private ClientesRepository clientesRepository;
+    private final ClientesRepository clientesRepository;
 
     public ClienteController( ClientesRepository clientesRepository ) {
         this.clientesRepository = clientesRepository;
@@ -61,18 +61,23 @@ public class ClienteController {
         return clientesRepository.findByCpf(cpf).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente not Found"));
     }
 
-    @GetMapping
-    public List<Cliente> find( @RequestBody Cliente filtro ){
-        System.out.println(filtro);
-        ExampleMatcher matcher = ExampleMatcher
-                .matching()
-                .withIgnoreCase()
-                .withStringMatcher(
-                        ExampleMatcher.StringMatcher.CONTAINING );
+//    @GetMapping
+//    public List<Cliente> find( @RequestBody Cliente filtro ){
+//        System.out.println(filtro);
+//        ExampleMatcher matcher = ExampleMatcher
+//                .matching()
+//                .withIgnoreCase()
+//                .withStringMatcher(
+//                        ExampleMatcher.StringMatcher.CONTAINING );
+//
+//        Example<Cliente> example = Example.of(filtro, matcher);
+//        System.out.println(example);
+//        return clientesRepository.findAll(example);
+//    }
 
-        Example<Cliente> example = Example.of(filtro, matcher);
-        System.out.println(example);
-        return clientesRepository.findAll(example);
+    @GetMapping
+    public List<Cliente> getAll () {
+        return clientesRepository.findAll();
     }
 
 }

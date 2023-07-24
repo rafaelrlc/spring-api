@@ -3,9 +3,14 @@ package io.github.rafaelrlc.vendasdata.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
+
+@Getter
+@Setter
 @Entity
 @Table(name = "cliente") // coloca o nome que ta no banco de dados
 public class Cliente {
@@ -42,43 +47,4 @@ public class Cliente {
 
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Set<Venda> getVendas() {
-        return vendas;
-    }
-
-    public void setVendas(Set<Venda> vendas) {
-        this.vendas = vendas;
-    }
-
-    public void setCpf(String cpf){
-        this.cpf = cpf;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                '}';
-    }
 }

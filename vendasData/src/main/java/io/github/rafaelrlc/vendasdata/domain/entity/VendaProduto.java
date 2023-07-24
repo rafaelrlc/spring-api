@@ -1,7 +1,11 @@
 package io.github.rafaelrlc.vendasdata.domain.entity;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-// REPRESENTA UMA VENDA INDIVIDUAL, PODE VARIOS DESSES VÃO COMPOR O "VENDA"
+@Getter
+@Setter
 @Entity
 @Table(name = "venda_produto")
 public class VendaProduto {
@@ -22,36 +26,4 @@ public class VendaProduto {
     @Column(name = "quantidade")
     private Integer quantidade;
 
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Venda getVenda() {
-        return venda;
-    }
-
-    public void setVenda(Venda venda) {
-        this.venda = venda;
-    }
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public Integer getQuantidade() {
-        return quantidade;
-    }
 }

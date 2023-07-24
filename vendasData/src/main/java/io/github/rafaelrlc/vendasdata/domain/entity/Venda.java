@@ -1,11 +1,15 @@
 package io.github.rafaelrlc.vendasdata.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "venda")
 public class Venda {
@@ -28,51 +32,4 @@ public class Venda {
     @OneToMany(mappedBy = "venda")
     private List<VendaProduto> itens;
 
-
-    public List<VendaProduto> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<VendaProduto> itens) {
-        this.itens = itens;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public LocalDate getDataVenda() { return dataVenda; }
-
-    public void setDataVenda(LocalDate dataVenda) {
-        this.dataVenda = dataVenda;
-    }
-
-    public BigDecimal getTotal() {
-        return total;
-    }
-
-    public void setTotal(BigDecimal total) {
-        this.total = total;
-    }
-
-    @Override
-    public String toString() {
-        return "Venda{" +
-                "id=" + id +
-                ", dataVenda=" + dataVenda +
-                ", total=" + total +
-                '}';
-    }
 }
