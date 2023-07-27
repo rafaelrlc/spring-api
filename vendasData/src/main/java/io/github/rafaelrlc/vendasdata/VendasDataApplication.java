@@ -19,7 +19,7 @@ public class VendasDataApplication {
             Cliente c1 = new Cliente(null,"Rafael", "23232309019");
             clientes.save(c1);
             Cliente c2 = new Cliente(null,"Pedro", "28372832911");
-            clientes.save(c1);
+            clientes.save(c2);
         };
     }
 
